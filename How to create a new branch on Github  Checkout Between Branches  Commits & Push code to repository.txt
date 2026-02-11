@@ -1,0 +1,21 @@
+How to create a new branch on Github  Checkout Between Branches  Commits & Push code to repository
+
+🌳 What is a Branch? (Very Simple)
+
+Imagine:
+
+Your project is a notebook.
+
+The main branch is the original notebook.
+
+A new branch is like making a photocopy to try changes safely.
+
+If something goes wrong in the new branch → your original notebook is still safe.
+
+So we create branches when:
+
+Adding a new feature
+
+Fixing a bug
+
+Testing something
