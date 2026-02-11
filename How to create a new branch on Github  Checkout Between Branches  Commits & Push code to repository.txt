@@ -19,3 +19,67 @@ Adding a new feature
 Fixing a bug
 
 Testing something
+
+============================================================
+
+🟢 PART 1 — Check Where You Are
+
+Open terminal inside your project folder and type:
+
+git status
+
+
+This tells you:
+
+Which branch you are on
+
+If there are any changes
+
+To see your current branch:
+
+git branch
+
+
+The branch with * is your current branch (usually main).
+
+🌿 PART 2 — Create a New Branch
+Step 1: Create the branch
+git branch new-branch-name
+
+
+Example:
+
+git branch feature-login
+
+
+This creates the branch
+BUT you are still on the old branch.
+
+Step 2: Switch to the new branch
+git checkout new-branch-name
+
+
+Example:
+
+git checkout feature-login
+
+
+Now you are working inside that branch.
+
+🔥 Shortcut (Create + Switch in one command)
+
+Instead of 2 commands, you can do:
+
+git checkout -b feature-login
+
+
+This:
+
+Creates branch
+
+Switches to it
+
+Modern Git alternative:
+
+git switch -c feature-login
+===========================================================
