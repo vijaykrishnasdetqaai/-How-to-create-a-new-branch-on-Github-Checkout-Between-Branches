@@ -19,3 +19,30 @@ Adding a new feature
 Fixing a bug
 
 Testing something
+
+=======================================================================================
+
+🧠 First: What is Git and GitHub?
+
+Git → Tool on your computer that tracks changes.
+
+GitHub → Website where your project is stored online.
+
+Git works locally.
+GitHub stores it online.
+
+Now let’s do this step-by-step.
+
+✅ STEP 1: Open Your Project Folder
+
+Open terminal (or Git Bash) and go inside your project folder:
+
+cd your-project-folder
+
+
+👉 Question for you:
+Do you already have a GitHub repository created for your project?
+
+Answer yes or no.
+
+==========================================================================================
