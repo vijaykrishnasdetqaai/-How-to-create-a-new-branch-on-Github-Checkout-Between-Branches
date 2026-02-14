@@ -359,3 +359,108 @@ Reviewers can *Approve*, *Comment*, or *Request changes* when submitting feedbac
 References:
 - GitHub Docs: Commenting on a pull request — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
 - GitHub Docs: About pull request reviews — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews
+
+===========================================================
+
+✅ PART 5 — Next Flow After a Pull Request Is Merged
+
+After you resolve conflicts (if any), complete reviews, and merge a PR into `main` or `develop`, follow this standard post-merge workflow.
+
+## 1) Delete the Feature Branch
+
+Once the PR is merged and work is complete:
+
+```bash
+git branch -d feature/login-page
+git push origin --delete feature/login-page
+```
+
+This keeps your branch list clean and avoids stale branches.
+
+## 2) Update Your Local Main/Develop Branch
+
+Sync your local branch with the remote before starting new work:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+If your team uses `develop`:
+
+```bash
+git checkout develop
+git pull origin develop
+```
+
+## 3) Start New Work from Updated Base
+
+Create fresh branches from updated `main`/`develop`.
+
+Examples:
+
+- `feature/add-user-settings`
+- `bugfix/fix-session-timeout`
+
+This keeps each task isolated and reviewable.
+
+## 4) Close or Update Related Issues
+
+If your PR used keywords like `Closes #123`, GitHub can auto-close the issue.
+Otherwise:
+
+- Add a completion comment (example: “Merged & completed”).
+- Close the issue manually.
+
+## 5) Deploy or Promote the Change
+
+Depending on your CI/CD setup:
+
+- Deploy to staging for QA
+- Deploy to production (if your pipeline is configured for it)
+
+Always verify the merged change in the target environment.
+
+## 6) Run Full Tests + Release Hygiene
+
+After merge, ensure release quality:
+
+- Run full CI test suite
+- Bump version (if applicable)
+- Update changelog
+- Tag release (example: `v1.2.0`)
+
+## 7) Sync Other Long-Lived Branches (Git Flow Teams)
+
+Typical flow:
+
+1. Feature branch → merged into `develop`
+2. `develop` → merged into `main` for release
+3. Tag release on `main`
+4. Merge back into `develop` if required
+
+This prevents branch drift between `main` and `develop`.
+
+## 8) Plan and Start the Next Task
+
+Repeat the professional cycle:
+
+```text
+feature/next-task-name
+→ commit
+→ push
+→ open PR
+→ review
+→ merge
+```
+
+## Quick Post-Merge Checklist
+
+1. Delete merged feature branch
+2. Pull latest `main`/`develop`
+3. Close linked issues
+4. Verify deployment/staging
+5. Confirm CI/tests passed
+6. Tag release (if needed)
+7. Sync long-lived branches
+8. Start next branch/task
