@@ -28,7 +28,6 @@ Open terminal inside your project folder and type:
 
 git status
 
-
 This tells you:
 
 Which branch you are on
@@ -39,30 +38,28 @@ To see your current branch:
 
 git branch
 
-
 The branch with * is your current branch (usually main).
 
 🌿 PART 2 — Create a New Branch
-Step 1: Create the branch
-git branch new-branch-name
 
+Step 1: Create the branch
+
+git branch new-branch-name
 
 Example:
 
 git branch feature-login
 
-
 This creates the branch
 BUT you are still on the old branch.
 
 Step 2: Switch to the new branch
-git checkout new-branch-name
 
+git checkout new-branch-name
 
 Example:
 
 git checkout feature-login
-
 
 Now you are working inside that branch.
 
@@ -71,7 +68,6 @@ Now you are working inside that branch.
 Instead of 2 commands, you can do:
 
 git checkout -b feature-login
-
 
 This:
 
@@ -82,4 +78,136 @@ Switches to it
 Modern Git alternative:
 
 git switch -c feature-login
-===========================================================
+
+============================================================
+
+🚀 PART 3 — Real-World Developer Workflow (Feature → PR → Merge)
+
+## 1) Start from the Main (or Develop) Branch
+
+Most projects keep stable code in a branch like `main` or `develop`.
+
+```bash
+git checkout main
+git pull origin main
+```
+
+This makes sure your local branch is up to date.
+
+## 2) Create a Feature Branch
+
+Create a new branch for your feature so you don’t edit `main` directly.
+
+```bash
+git checkout -b feature/add-login-page
+```
+
+Use meaningful names like `feature/login-page` or `fix/issue-123`.
+
+## 3) Write Your Code
+
+Do your development work, for example:
+
+- Create login UI
+- Add validation
+- Implement authentication logic
+
+Stage and commit often with clear commit messages:
+
+```bash
+git add .
+git commit -m "feat: add login form component"
+git commit -m "feat: implement login authentication logic"
+```
+
+## 4) Push the Feature Branch to Remote
+
+```bash
+git push -u origin feature/add-login-page
+```
+
+This creates (or updates) your branch on GitHub/GitLab/Bitbucket.
+
+## 5) Create a Pull Request (PR)
+
+On GitHub:
+
+1. Open the repository
+2. Click **Compare & pull request**
+3. Set source = feature branch, target = `main`/`develop`
+4. Add title, description, and linked issue (if any)
+
+PRs allow review before code is merged.
+
+## 6) Code Review
+
+Teammates can:
+
+- Comment on specific lines
+- Suggest changes
+- Approve or request updates
+
+Example feedback:
+
+- “Please add validation for empty input”
+- “Consider using a modal for login errors”
+
+## 7) Address Review Feedback
+
+If changes are requested:
+
+```bash
+git add .
+git commit -m "fix: add input validation per review feedback"
+git push origin feature/add-login-page
+```
+
+Your PR updates automatically.
+
+## 8) Merge the Approved Pull Request
+
+After approvals and passing CI checks, merge the PR.
+
+Common merge options on GitHub:
+
+- **Merge commit** (preserves all commits)
+- **Squash and merge** (one combined commit)
+- **Rebase and merge** (linear history)
+
+Then delete the feature branch.
+
+## 9) Clean Up and Sync
+
+```bash
+git checkout main
+git pull origin main
+git branch -d feature/add-login-page
+```
+
+This syncs local `main` and removes the local feature branch.
+
+## Optional: Resolve Conflicts
+
+If your branch is behind `main` while you are working:
+
+```bash
+git fetch origin
+git merge origin/main
+```
+
+Resolve conflicts locally, then commit and push.
+
+============================================================
+
+🧠 Overall Flow in Short
+
+1. Create branch for a feature
+2. Develop and commit code
+3. Push branch to remote
+4. Open PR for review
+5. Team reviews and comments
+6. Address feedback and push updates
+7. Merge approved PR into `main`
+8. Delete branch and sync local
+
+This is the core of GitHub Flow used by many teams.
