@@ -359,3 +359,118 @@ Reviewers can *Approve*, *Comment*, or *Request changes* when submitting feedbac
 References:
 - GitHub Docs: Commenting on a pull request — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
 - GitHub Docs: About pull request reviews — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews
+
+===========================================================
+
+🧩 PART 6 — Merge Conflicts: What They Are and How to Resolve Them
+
+## 🧠 What a Merge Conflict Is
+
+A merge conflict happens when two branches change the same part of the same file in different ways, and Git cannot automatically decide which version should be kept.
+
+Common causes:
+- Two developers edit the same line differently.
+- One branch deletes a file while another branch edits it.
+- A file is renamed or moved differently across branches.
+
+When this occurs, Git pauses the merge and asks you to resolve conflicts manually.
+
+## 🔍 What Conflict Markers Look Like
+
+When a file has conflicts, Git inserts markers like:
+
+```text
+[current-branch marker] HEAD
+code from your current branch
+[incoming separator]
+code from the branch being merged
+[incoming-branch marker] feature/login
+```
+
+`HEAD` = your current branch.
+The lower section = incoming branch changes.
+
+## 🛠️ Step-by-Step: Resolve Conflicts Locally
+
+### 1) Start the merge from target branch
+
+```bash
+git checkout main
+git pull origin main
+git merge feature/login
+```
+
+If there is a conflict, Git stops automatically.
+
+### 2) List conflicted files
+
+```bash
+git status
+```
+
+Git shows which files need manual resolution.
+
+### 3) Open each conflicted file
+
+You will see conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) where decisions are required.
+
+### 4) Resolve each conflict
+
+Choose one of these options:
+- Keep current branch changes
+- Keep incoming branch changes
+- Combine both changes manually
+
+Then remove all conflict markers.
+
+### 5) Mark resolved and complete merge
+
+```bash
+git add <filename>
+git commit -m "Resolved merge conflicts in <filename>"
+git push origin main
+```
+
+Now the merge is complete.
+
+## 🌐 Resolve Conflicts in GitHub Pull Request UI
+
+If GitHub reports merge conflicts in a PR:
+1. Click **Resolve conflicts**.
+2. Edit conflicted content in the web editor.
+3. Click **Mark as resolved**.
+4. Click **Commit merge**.
+
+## ✅ Tips to Reduce Conflict Frequency
+
+- Pull latest `main` frequently into feature branches.
+- Keep PRs small and focused.
+- Communicate early about large refactors or structural changes.
+- Update your branch before opening/finalizing a PR:
+
+```bash
+git fetch
+git merge origin/main
+```
+
+## 🧯 If You Need to Cancel the Merge
+
+If you want to stop and return to pre-merge state:
+
+```bash
+git merge --abort
+```
+
+## 📌 Quick Process Summary
+
+| Step | Action |
+| ---- | ------ |
+| 1 | Run `git merge` (or open PR merge) |
+| 2 | Git detects conflicts |
+| 3 | Open conflicted files and inspect markers |
+| 4 | Resolve manually and remove markers |
+| 5 | `git add` resolved files |
+| 6 | Commit and push |
+| 7 | Complete merge/PR |
+
+🟢 Merge conflicts are normal in collaborative development. They are not a failure—just Git asking for a human decision.
