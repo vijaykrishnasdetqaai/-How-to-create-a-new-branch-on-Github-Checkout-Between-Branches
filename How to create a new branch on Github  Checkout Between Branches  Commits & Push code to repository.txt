@@ -157,3 +157,76 @@ Develop login UI → feature/login-page
 Fix a UI bug → bugfix/header-alignment
 Prepare a release → release/v1.0.0
 Emergency production fix → hotfix/security-patch
+
+===========================================================
+
+💬 PART 4 — How Managers and Developers Discuss Pull Requests (PRs)
+
+In real teams, pull requests are collaborative conversations.
+People do not just approve or reject — they discuss, suggest, clarify, and improve the code together.
+
+## 1) Types of comments you’ll see
+
+### 🔹 General conversation comments
+Used for high-level feedback in the Conversation tab.
+
+Example:
+Manager: “This looks good overall, but please handle invalid input and update README steps.”
+Developer: “Done — I added validation and updated README in the latest commit.”
+
+### 🔹 Inline code comments
+Used for line-by-line feedback in Files changed.
+
+Example:
+Reviewer: “On line 42, can we avoid hard-coding this string and use a constant?”
+Developer: “Good suggestion — switched to const LOGIN_TIMEOUT.”
+
+### 🔹 Review summaries
+After reviewing, a reviewer submits one of:
+- Approve
+- Request changes
+- Comment
+
+Example:
+Reviewer: “Request changes: split the login handler into smaller functions and add invalid-password tests.”
+Manager: “Agree. Once tests are added, we can merge.”
+
+## 2) Typical real-world interaction flow
+
+Dev: Created PR for login page feature.
+Manager: Thanks! Please align error messages to our style guide.
+Dev: Updated in latest commit.
+Reviewer: There may be a null pointer risk here.
+Dev: Fixed and pushed.
+Reviewer: Approved 👍
+Manager: Approved and merged.
+
+## 3) Best practices for healthy PR discussions
+
+### 👍 For developers
+- Write clear commit messages and PR descriptions.
+- Ask specific questions when you want targeted review.
+  Example: “Is this regex acceptable for password validation?”
+
+### 🧑‍💼 For managers/reviewers
+- Explain why feedback matters (security, maintainability, user impact).
+- Keep comments actionable and clear.
+
+### 📌 Use @mentions
+If a specific person should respond, tag them.
+Example: @alice Could you re-review the API changes?
+
+### 📍 Resolve conversations
+Mark threads resolved once fixed, so the PR stays clean and focused.
+
+## 4) Tone matters
+
+Use constructive language:
+- “Could we instead do…?”
+- “What if we try…?”
+- “Please consider…?”
+
+Respectful wording makes reviews faster, easier, and more productive.
+
+✅ PR discussion lifecycle in short:
+Developer opens PR → reviewers comment → developer updates code → reviewers re-check → approvals → merge.
