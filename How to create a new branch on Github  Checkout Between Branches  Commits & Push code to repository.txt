@@ -157,3 +157,84 @@ Develop login UI → feature/login-page
 Fix a UI bug → bugfix/header-alignment
 Prepare a release → release/v1.0.0
 Emergency production fix → hotfix/security-patch
+
+===========================================================
+
+🧠 PART 4 — Real-Time Reviews & Comments on GitHub (PRs + Issues)
+
+## 1) Comment on a Pull Request (PR)
+
+### 🟡 Comment in the Conversation tab
+
+- Open the PR on GitHub.
+- Scroll down to the discussion area.
+- Type a comment and click **Comment**.
+
+Use this for general feedback on the whole PR (for example: “Looks good overall”).
+
+### 🔵 Comment on specific lines of code
+
+1. Open the **Files changed** tab.
+2. Hover over the line number.
+3. Click the **➕** icon.
+4. Write feedback and submit.
+
+This comment is attached to that exact code line in the diff.
+
+💡 Tip: You can suggest code changes directly with GitHub’s suggestion feature, including fenced blocks like:
+
+```suggestion
+<input type="email" placeholder="Enter your email address">
+```
+
+## 2) Submit a Full Review
+
+After adding line comments:
+
+1. Click **Review changes** (top-right in **Files changed**).
+2. Add a summary comment.
+3. Pick one:
+   - **Comment** (feedback only)
+   - **Approve** (accept changes)
+   - **Request changes** (changes required before merge)
+4. Click **Submit review**.
+
+This creates a formal, trackable review record in the PR.
+
+## 3) Comment on Issues
+
+- Open an issue from the **Issues** tab.
+- Write your message at the bottom.
+- Click **Comment**.
+
+Issues are used for bugs, feature requests, and planning discussions.
+
+To find issues you are involved in, search:
+
+involves:@me
+
+## 4) Reply to Existing Comments
+
+In both PRs and issues:
+
+- Click **Reply** under a comment.
+- Add your response and submit.
+
+This creates threaded conversations and improves collaboration clarity.
+
+## ✅ Professional Best Practices
+
+- Be clear and actionable in feedback.
+- Use `@mentions` to notify teammates.
+- Use emoji reactions for quick acknowledgement.
+- Suggest concrete code updates when possible.
+- Avoid merging while critical feedback is unresolved.
+
+## 📌 Example PR Review Flow (Login Page)
+
+1. Open PR → **Files changed**.
+2. Add line comment: “Consider more descriptive error messages.”
+3. Add an inline suggestion block where needed.
+4. Click **Review changes** → **Request changes** with a short summary.
+
+This is the standard professional workflow for structured, traceable GitHub collaboration.
