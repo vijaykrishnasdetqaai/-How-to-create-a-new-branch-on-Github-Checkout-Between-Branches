@@ -83,3 +83,77 @@ Modern Git alternative:
 
 git switch -c feature-login
 ===========================================================
+
+🏷️ PART 3 — Branch Naming Conventions (Recommended)
+
+Using clear branch names makes teamwork and pull requests much easier.
+
+🔁 Common Branch Types & Naming Patterns
+
+🏠 Main Branches (long-lived)
+
+main — stable production code
+develop — integration branch for upcoming work (optional)
+
+🆕 Feature Branches
+
+Pattern:
+feature/<short-description>
+
+Examples:
+feature/login-page
+feature/add-user-authentication
+feature/update-dashboard-ui
+
+🐛 Bugfix / Fix Branches
+
+Pattern:
+bugfix/<short-description>
+
+Examples:
+bugfix/fix-login-error
+bugfix/correct-header-layout
+bugfix/resolve-api-timeout
+
+Alternative prefix:
+fix/<short-description>
+
+🔥 Hotfix Branches (urgent production fixes)
+
+Pattern:
+hotfix/<short-description>
+
+Examples:
+hotfix/security-patch
+hotfix/urgent-data-fix
+
+🏷️ Release Branches
+
+Pattern:
+release/<version-number>
+
+Examples:
+release/v1.0.0
+release/v1.2.0
+
+📘 Other Useful Branch Types
+
+docs/update-readme
+refactor/code-cleanup
+test/add-unit-tests
+chore/update-dependencies
+
+📏 Naming Best Practices
+
+✔ Start with a purpose prefix (feature/, bugfix/, hotfix/, etc.)
+✔ Use lowercase only
+✔ Use hyphens (-) between words
+✔ Keep names short but descriptive
+✔ Optionally include ticket IDs (example: feature/123-login-page)
+
+🛠️ Quick Mapping
+
+Develop login UI → feature/login-page
+Fix a UI bug → bugfix/header-alignment
+Prepare a release → release/v1.0.0
+Emergency production fix → hotfix/security-patch
