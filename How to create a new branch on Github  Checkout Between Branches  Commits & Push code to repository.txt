@@ -238,3 +238,124 @@ This creates threaded conversations and improves collaboration clarity.
 4. Click **Review changes** → **Request changes** with a short summary.
 
 This is the standard professional workflow for structured, traceable GitHub collaboration.
+
+===========================================================
+
+🧾 PART 5 — Mock Real-World Pull Request (PR) Conversation Script
+
+## 📌 Pull Request Title
+
+**feat: Add responsive login page with validation**
+*Created by: @dev-alice*
+
+## 💬 PR Conversation — Summary & First Comments
+
+**@dev-alice (Developer):**
+
+> 🚀 Adds a responsive login page component with client-side validation and error messaging.
+>
+> * Mobile + desktop compatible
+> * Password strength indicator
+> * Unit tests for validation logic
+>
+> Closes #27 — Login page UI and logic implementation.
+
+### 🧑‍💻 Reviewer Comments
+
+#### 🔹 Inline Code Comment
+
+**@rev-bob (Reviewer):**
+
+> On line 102 of `Login.js`:
+> `if (password.length < 8) { … }`
+>
+> 💡 Could we replace this magic number (**8**) with a named constant like `MIN_PASSWORD_LENGTH`? It makes intentions clearer.
+>
+> (Clicking + beside the line of code in Files changed allows this comment.)
+
+#### 🧑‍💻 Another Reviewer Note
+
+**@rev-bob (Reviewer):**
+
+> In `Login.css`, some breakpoint values are hard-coded. For consistency with other components, can we use the shared spacing tokens from `theme.css`? This keeps styling consistent.
+>
+> (Reviewer comments are usually added from *Files changed* view.)
+
+### 🧑‍💼 Manager Feedback
+
+**@mgr-charlie (Manager):**
+
+> Nice work on the responsiveness — good job! 👍
+>
+> Two requests before merge:
+>
+> 1. Update `README.md` with a screenshot and basic usage instructions.
+> 2. Confirm whether this component handles *maximum* password length as well (security needs it).
+>
+> Let me know if you need help!
+>
+> (Managers can comment in the *Conversation* tab or directly respond to inline comments.)
+
+## 💬 Developer Addresses Feedback
+
+**@dev-alice (Developer):**
+
+> Thanks for the feedback! I’ve made the following updates:
+> • Replaced magic number with `MIN_PASSWORD_LENGTH` constant.
+> • Updated CSS to use shared theme variables.
+> • Added screenshots and basic instructions to README.
+> • Max password length now enforced to 64 characters.
+>
+> Pushed as commit `abc123` — ready for re-review.
+
+## 📣 Re-Reviewer Response
+
+**@rev-bob (Reviewer):**
+
+> Much better — thanks for making those changes!
+>
+> Only minor suggestion left: Can we add a test case for when password is empty? That should display the “Password is required” error.
+>
+> (Line-by-line or general review comments help guide the next commit.)
+
+## 🧠 Developer’s Final Commit & Comment
+
+**@dev-alice (Developer):**
+
+> Added an empty password test case — now failing validation as expected.
+> Ready for final approval.
+
+## ✅ Final Review & Approval
+
+**@rev-bob (Reviewer):**
+
+> All review comments addressed and tests passing. ✅
+>
+> Approving this PR! 🎉
+>
+> (Reviewers click **Review changes → Approve** when ready.)
+
+**@mgr-charlie (Manager):**
+
+> Great job team — merging ✨
+
+## 🚀 After Merge
+
+**@mgr-charlie:**
+
+> Merged into `main` — deployed to staging. Let’s monitor login feedback from QA 🔍
+
+## 🧠 Key Patterns in Real GitHub PR Discussions
+
+1️⃣ **General Conversation Comments**
+Comments on the overall PR are usually in the *Conversation* tab.
+
+2️⃣ **Inline Line Comments**
+Target specific file lines in the *Files changed* view — often about code style, naming, or potential bugs.
+
+3️⃣ **Approvals or Requests for Changes**
+Reviewers can *Approve*, *Comment*, or *Request changes* when submitting feedback. Managers often add context or strategic reminders before merge.
+
+References:
+- GitHub Docs: Commenting on a pull request — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
+- GitHub Docs: About pull request reviews — https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews
