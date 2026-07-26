@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PromptForge 3D — Universal AI Prompt Generator</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Universal prompt generator for every AI model</p>
+          <h1 id="app-title">PromptForge 3D</h1>
+          <p class="lede">Generate structured prompts for image, video, chat, work automation, and software-industry use cases across all major AI model families.</p>
+          <div class="hero-actions">
+            <a class="button" href="#generator">Build a prompt</a>
+            <a class="button button-ghost" href="#category-pages">Tool pages</a>
+          </div>
+        </div>
+        <div class="orb-stage" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="glass-card floating-card">Image · Video · Chat · Workflows</div>
+        </div>
+      </section>
+
+      <section id="generator" class="panel generator" aria-labelledby="generator-title">
+        <div>
+          <p class="eyebrow">No-code prompt composer</p>
+          <h2 id="generator-title">Create a production-ready prompt</h2>
+        </div>
+        <form id="prompt-form" class="prompt-form">
+          <label>AI model family
+            <select id="model" name="model"></select>
+          </label>
+          <label>Prompt type
+            <select id="mode" name="mode">
+              <option value="chat">Chat assistant</option>
+              <option value="image">Image generation</option>
+              <option value="video">Video generation</option>
+              <option value="workflow">Work automation</option>
+              <option value="software">Software project</option>
+            </select>
+          </label>
+          <label>Domain
+            <select id="domain" name="domain"></select>
+          </label>
+          <label>Goal
+            <textarea id="goal" name="goal" rows="3" placeholder="Example: create a responsive SaaS landing page with pricing, onboarding, and analytics"></textarea>
+          </label>
+          <label>Audience
+            <input id="audience" name="audience" placeholder="Example: startup founders and product teams">
+          </label>
+          <label>Tone
+            <input id="tone" name="tone" value="clear, practical, premium, and concise">
+          </label>
+          <label>Constraints
+            <textarea id="constraints" name="constraints" rows="3">Use safe, original content; avoid unsupported claims; include measurable acceptance criteria.</textarea>
+          </label>
+          <label>Loop improvements
+            <input id="loopCount" name="loopCount" type="number" min="1" max="8" value="3">
+          </label>
+          <label class="check-row">
+            <input id="includeTests" name="includeTests" type="checkbox" checked>
+            Include functional, UI/UX, accessibility, and validation checks
+          </label>
+          <button class="button" type="submit">Generate prompt</button>
+        </form>
+        <article class="output-card" aria-live="polite">
+          <div class="output-toolbar">
+            <h3>Your prompt</h3>
+            <button id="copy" class="button button-small" type="button">Copy</button>
+          </div>
+          <pre id="output">Fill the form and generate your first universal AI prompt.</pre>
+        </article>
+      </section>
+
+
+
+      <section id="category-pages" class="panel category-pages" aria-labelledby="category-pages-title">
+        <div>
+          <p class="eyebrow">Separate pages and screens</p>
+          <h2 id="category-pages-title">AI prompt tool categories</h2>
+          <p class="lede">Open dedicated pages for each prompt-tool category: chat, image, video, software, business workflows, and governance.</p>
+        </div>
+        <div class="category-link-grid">
+          <a href="pages/chat-tools.html">Chat & Agent Tools</a>
+          <a href="pages/image-tools.html">Image Tools</a>
+          <a href="pages/video-tools.html">Video Tools</a>
+          <a href="pages/software-tools.html">Software Tools</a>
+          <a href="pages/business-tools.html">Business Workflow Tools</a>
+          <a href="pages/quality-tools.html">Quality & Governance Tools</a>
+        </div>
+      </section>
+
+      <section id="module-workspace" class="panel module-workspace" aria-labelledby="workspace-title">
+        <div>
+          <p class="eyebrow">Build all modules</p>
+          <h2 id="workspace-title">End-to-end module workspace</h2>
+          <p class="lede">Generate, save, iterate, create media prompts, draft software specs, build workflows, and run quality checks in one flow.</p>
+        </div>
+        <div class="workspace-grid">
+          <article>
+            <h3>Prompt Library</h3>
+            <button id="save-prompt" class="button button-small" type="button">Save current prompt</button>
+            <ul id="library-list" class="library-list"></ul>
+          </article>
+          <article>
+            <h3>Loop Lab</h3>
+            <button id="run-loop-lab" class="button button-small" type="button">Run loop lab</button>
+            <pre id="loop-lab-output"></pre>
+          </article>
+          <article>
+            <h3>Image & Video Studio</h3>
+            <input id="media-subject" value="futuristic AI prompt dashboard">
+            <select id="media-type"><option value="image">Image</option><option value="video">Video</option></select>
+            <button id="create-media" class="button button-small" type="button">Create media prompt</button>
+            <pre id="media-output"></pre>
+          </article>
+          <article>
+            <h3>Software Spec Generator</h3>
+            <input id="software-idea" value="Universal AI prompt generator platform">
+            <button id="create-spec" class="button button-small" type="button">Create spec</button>
+            <pre id="spec-output"></pre>
+          </article>
+          <article>
+            <h3>Team Workflow Automations</h3>
+            <input id="workflow-team" value="product engineering team">
+            <button id="create-workflow" class="button button-small" type="button">Create workflow</button>
+            <pre id="workflow-output"></pre>
+          </article>
+          <article>
+            <h3>Quality Center</h3>
+            <button id="run-quality" class="button button-small" type="button">Run quality report</button>
+            <pre id="quality-output"></pre>
+          </article>
+        </div>
+      </section>
+
+
+
+      <section id="advanced-workspace" class="panel advanced-workspace" aria-labelledby="advanced-title">
+        <div>
+          <p class="eyebrow">Next modules built</p>
+          <h2 id="advanced-title">Advanced AI workflow modules</h2>
+          <p class="lede">Use model optimization, prompt chains, template marketplace, export packages, analytics, and governance guardrails.</p>
+        </div>
+        <div class="advanced-grid">
+          <article><h3>Model Optimizer</h3><button id="run-model-optimizer" class="button button-small" type="button">Optimize prompt</button><pre id="model-optimizer-output"></pre></article>
+          <article><h3>Prompt Chain Builder</h3><button id="build-chain" class="button button-small" type="button">Build chain</button><pre id="chain-output"></pre></article>
+          <article><h3>Template Marketplace</h3><button id="show-templates" class="button button-small" type="button">Show templates</button><ul id="template-output" class="library-list"></ul></article>
+          <article><h3>Export Center</h3><select id="export-format"><option value="markdown">Markdown</option><option value="json">JSON</option></select><button id="export-workspace" class="button button-small" type="button">Export</button><pre id="export-output"></pre></article>
+          <article><h3>Analytics Dashboard</h3><button id="run-analytics" class="button button-small" type="button">Analyze library</button><pre id="analytics-output"></pre></article>
+          <article><h3>Governance Guardrails</h3><button id="run-governance" class="button button-small" type="button">Review risk</button><pre id="governance-output"></pre></article>
+        </div>
+      </section>
+
+      <section id="next-builds" class="panel next-builds" aria-labelledby="next-builds-title">
+        <div>
+          <p class="eyebrow">Next modules to build</p>
+          <h2 id="next-builds-title">Advanced build queue</h2>
+          <p class="lede">Pick the next high-impact module and get a practical build brief with implementation steps and a starter prompt.</p>
+        </div>
+        <div class="next-build-layout">
+          <label>Choose next module
+            <select id="next-build-select"></select>
+          </label>
+          <pre id="next-build-output"></pre>
+        </div>
+      </section>
+
+      <section id="roadmap" class="panel roadmap" aria-labelledby="roadmap-title">
+        <div>
+          <p class="eyebrow">Next build ideas</p>
+          <h2 id="roadmap-title">Plan and build modules one by one</h2>
+          <p class="lede">Choose a module to see the next practical build plan, deliverables, and acceptance criteria.</p>
+        </div>
+        <div class="module-board">
+          <label>Module roadmap
+            <select id="module-select" name="module-select"></select>
+          </label>
+          <pre id="module-plan">Select a module to plan the next build.</pre>
+        </div>
+      </section>
+
+      <section id="quality" class="quality-grid" aria-labelledby="quality-title">
+        <h2 id="quality-title">Built-in quality coverage</h2>
+        <article><h3>Functional testing</h3><p>Validate inputs, model selection, domain rules, loop prompt counts, and generated output structure.</p></article>
+        <article><h3>UI/UX testing</h3><p>Check responsive layout, readable hierarchy, clear actions, empty states, copy feedback, and keyboard navigation.</p></article>
+        <article><h3>Industry coverage</h3><p>Prompt templates include software, product, marketing, sales, education, finance, healthcare, legal operations, and more.</p></article>
+      </section>
+    </main>
+    <script type="module" src="src/app.mjs"></script>
+  </body>
+</html>

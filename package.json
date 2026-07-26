@@ -1,0 +1,12 @@
+{
+  "name": "universal-ai-prompt-generator",
+  "version": "1.0.0",
+  "description": "Responsive 3D-styled web app for generating image, video, chat, workflow, and software-industry prompts for all AI models.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "keywords": ["ai", "prompt-generator", "image", "video", "chat", "workflow", "software"],
+  "license": "MIT"
+}

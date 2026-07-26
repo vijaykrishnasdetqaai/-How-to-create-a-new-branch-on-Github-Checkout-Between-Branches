@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quality, Safety & Governance Tools — PromptForge 3D</title>
+    <link rel="stylesheet" href="../src/styles.css">
+  </head>
+  <body data-category="quality-tools">
+    <main class="shell category-screen">
+      <nav class="page-nav"><a href="../index.html">← Home</a><div id="category-nav"></div></nav>
+      <section class="panel category-hero">
+        <p class="eyebrow">Separate prompt tool page</p>
+        <h1 id="category-title">Quality, Safety & Governance Tools</h1>
+        <p id="category-summary" class="lede"></p>
+      </section>
+      <section class="panel category-tool-screen">
+        <div>
+          <h2>Tools on this screen</h2>
+          <ul id="tool-list" class="tool-list"></ul>
+        </div>
+        <div>
+          <label>Goal for this category
+            <textarea id="category-goal" rows="4">Create a high-quality AI workflow for this category.</textarea>
+          </label>
+          <button id="generate-category-prompt" class="button" type="button">Generate category prompt</button>
+          <pre id="category-output"></pre>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="category.js"></script>
+  </body>
+</html>
